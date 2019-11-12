@@ -1,0 +1,69 @@
+.ui-PageComponent
+  div.container
+    div.left-menu
+      a.menu-item(href="#", data-bind="click: function() { renderMenu('Library'); }")
+        span.fi.fi-logo
+        | Library
+      a.menu-item(href="#", data-bind="click: function() { renderMenu('Step 1 Schedule'); }")
+        span.fi.fi-calendar
+        | Step 1 Schedule
+      a.menu-item(href="#", data-bind="click: function() { renderMenu('Quiz Builder'); }")
+        span.fi.fi-builder
+        | Quiz Builder
+      a.menu-item(href="#", data-bind="click: function() { renderMenu('Team Workspace'); }")
+        span.fi.fi-group
+        | Team Workspace
+      .menu-bottom
+        a.menu-item(href="#", data-bind="click: function() { renderMenu('Add Tools'); }")
+          span.fi.fi-logo
+          | Add Tools
+        a.menu-item(href="#", data-bind="click: function() { renderMenu('Help'); }")
+          span.fi.fi-logo
+          | Help
+    .right-content
+      .right-header
+        input.search(type='text', value='Search for videos, flashcards, and questions')
+        .top-menu
+          a.top-menu-item(href='#')
+            img(src='img/ico1.png')
+          a.top-menu-item(href='#')
+            img(src='img/ico2.png')
+          a.top-menu-item(href='#')
+            img(src='img/ico3.png')
+          a.top-menu-item.profile-img(href='#')
+            img(src='img/profileImage.png')
+    .category
+      img(src='img/robo.png')      
+      h2(data-bind='text: activeVideo.title')
+      ul.link-path(data-bind="foreach: activeVideo.categories")
+        li
+          a(data-bind='attr:{href: url}')
+          span(data-bind='text: name')
+      br
+    .video-container
+      .right-video
+        video(width="800", height="400", controls)
+          source(data-bind='attr:{src: activeVideo.url}', type="video/mp4")
+        table.quiz-area(border='0', cellpadding='0', cellspacing='0')
+          tbody
+            tr
+              td.quiz-area-left
+                span(data-bind='text: activeVideo.flashCards + " Flashcards"')
+                hr
+                span(data-bind='text: activeVideo.questions + " Questions"')
+              td.quiz-area-right
+                a(href="#", data-bind="click: addToQuizQueue") Add to Quiz Queue
+      .up-next
+        h2 Next to watch
+        ul(data-bind="foreach: activeVideo.nextToWatch")
+          li
+            img(data-bind='attr:{src: image}')
+            span(data-bind="text: title")
+            small(data-bind="text: source")
+      .play-list
+        h2 Similar Videos
+        ul(data-bind="foreach: activeVideo.similarVideos")
+          li
+            img(data-bind='attr:{src: image}')
+            span(data-bind="text: title")
+            small(data-bind="text: source")
