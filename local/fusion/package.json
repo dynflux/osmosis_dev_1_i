@@ -23,6 +23,9 @@
     "url": "https://github.com/OsmosisKD/fusion/issues"
   },
   "homepage": "https://github.com/OsmosisKD/fusion",
+  "engines": {
+    "node": "8.x"
+  }
   "dependencies": {
     "aws-sdk": "^2.1.30",
     "awssum": "^1.2.0",
