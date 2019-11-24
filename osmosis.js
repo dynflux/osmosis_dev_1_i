@@ -47,10 +47,12 @@ server.listen(app.get('port'),'localhost', function() {
   // The uncaughtException handler makes sure that an uncaught error cannot
   // bring down the server. The uncaughtException handler is added after the
   // server starts listening just in case that another process is already running
+    /*
   process.addListener("uncaughtException", function (err) {
     console.error("Uncaught exception: " + err.message);
     console.error(err.stack);
   });
+    */
 
   // Pre-load all methods so that the user doesn't have to wait
   fusion.preload();
