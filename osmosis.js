@@ -28,7 +28,7 @@ var http = require('http');
 var app = express();
 
 // Port the server listens on locally
-app.set('port', Const.port);
+app.set('port', process.env.PORT || 8080);
 app.use(logger('dev'));
 
 fusion.configure(framework);
