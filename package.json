@@ -1,5 +1,5 @@
 {
-  "name": "starter_repo",
+  "name": "osmosis_dev_1",
   "version": "1.0.0",
   "description": "Starter repo for getting to know how the Osmosis codebase works",
   "main": "osmosis.js",
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/OsmosisKD/starter_repo.git"
   },
   "author": "",
-  "license": "",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/OsmosisKD/starter_repo/issues"
   },
@@ -24,7 +24,5 @@
     "jade": "~0.27.7",
     "morgan": "^1.9.0"
   },
-  "engines": {
-    "node": "8.x"
-  },
+  "devDependencies": {}
 }
